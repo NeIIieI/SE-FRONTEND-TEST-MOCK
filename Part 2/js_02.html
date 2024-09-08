@@ -11,6 +11,20 @@
 
 <!-- Coding JavaScript 2.1 here!!!! -->
 
+ <script>
+	document.getElementById("btn2_1").addEventListener("click",function(){
+		var str = document.getElementById("str1")
+		var ans = document.getElementById("ans1")
+
+		if (str.textContent === "xxx-xxxxxxx") {
+			str.textContent = ans.textContent
+		}
+		else{
+			str.textContent = "xxx-xxxxxxx"
+		}
+	})
+ </script>
+
 
 
 <!-- Coding JavaScript 2.1 here!!!! -->
@@ -25,7 +39,19 @@
 <p id="str2" name="str2">ว/ด/ป</p>
 
 <!-- Coding JavaScript 2.2 here!!!! -->
+<script>
+	document.getElementById("btn2_2").addEventListener("click",function(){
+		var aday = new Date();
+		var day = aday.getDate();
+		var year = aday.getFullYear()+543
 
+		var months = ["มกราคม", "กุมภาพันธ์", "มีนาคม", "เมษายน", "พฤษภาคม", "มิถุนายน", "กรกฎาคม", "สิงหาคม", "กันยายน", "ตุลาคม", "พฤศจิกายน", "ธันวาคม"];
+		var month = months[aday.getMonth()];		
+		var full = "วันที่ "+day+" "+month+" "+year
+
+		document.getElementById("str2").textContent = full
+	})
+</script>
 
 
 <!-- Coding JavaScript 2.2 here!!!! -->
@@ -45,6 +71,18 @@
 <button class="btn btn-primary" id="btn2_3" onclick="javascript_lev2_3()">คลิกที่นี่ JS 2.3</button>
 
 <!-- Coding JavaScript 2.3 here!!!! -->
+ <script>
+	document.getElementById("btn2_3").addEventListener("click",function(){
+
+		var letter = document.getElementById("ans3")
+		if (letter.style.display=== "none") {
+			$(letter).slideDown();
+		}else{
+			$(letter).slideUp();
+		}
+
+	})
+ </script>
 
 
 
@@ -61,8 +99,19 @@
 <button class="btn btn-primary" id="btn2_4" onclick="javascript_lev2_4()">คลิกที่นี่ JS 2.4</button>
 
 <!-- Coding JavaScript 2.4 here!!!! -->
-
-
-
+ <script>
+	document.getElementById("btn2_4").addEventListener("click",function(){
+		var checkbox = document.getElementById("ans4")
+	if (checkbox.checked) {
+		alert("Checked")
+		
+	}else{
+		alert("Not Check")
+	}
+	})
+</script>
+	
+	
+	
 <!-- Coding JavaScript 2.4 here!!!! -->
 <hr>
