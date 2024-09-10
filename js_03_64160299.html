@@ -82,3 +82,102 @@
 </script>
 
 <!-- Coding JavaScript 3.2 here!!!! -->
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แปลงตัวอักษร</title>
+</head>
+<body>
+
+<h1>JavaScript 3.1 : 7 points</h1>
+<label for="inputText">พิมพ์ข้อความ:</label>
+<input type="text" id="inputText" oninput="convertText()">
+<br><br>
+<label for="outputText">ผลลัพธ์:</label>
+<input type="text" id="outputText" readonly>
+
+<script>
+function convertText() {
+    // รับค่าจาก input
+    let input = document.getElementById('inputText').value;
+    
+    // แปลงตัวอักษรพิมพ์เล็ก-พิมพ์ใหญ่
+    let converted = '';
+    for (let char of input) {
+        if (char === char.toUpperCase()) {
+            converted += char.toLowerCase(); // ถ้าพิมพ์ใหญ่ จะเปลี่ยนเป็นพิมพ์เล็ก
+        } else {
+            converted += char.toUpperCase(); // ถ้าพิมพ์เล็ก จะเปลี่ยนเป็นพิมพ์ใหญ่
+        }
+    }
+    
+    // แสดงผลลัพธ์
+    document.getElementById('outputText').value = converted;
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เพิ่มแถวในตาราง</title>
+</head>
+<body>
+
+    <h1>JavaScript 3.2 : 8 points</h1>
+
+    <!-- ปุ่มเพื่อเพิ่มแถว -->
+    <button id="addRowButton">คลิกที่นี่ JS 3.2</button>
+
+    <!-- ตาราง -->
+    <table border="1" id="studentTable">
+        <thead>
+            <tr>
+                <th>ลำดับ</th>
+                <th>ข้อมูลนิสิต</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- แถวใหม่จะถูกเพิ่มที่นี่ -->
+        </tbody>
+    </table>
+
+    <script>
+        // ฟังก์ชันเพื่อเพิ่มแถวใหม่
+        let count = 0; // ตัวแปรเพื่อเก็บจำนวนแถว
+
+        document.getElementById('addRowButton').addEventListener('click', function() {
+            count++; // เพิ่มจำนวนแถวนับหนึ่งครั้ง
+
+            // สร้างแถวใหม่
+            const newRow = document.createElement('tr');
+
+            // สร้างเซลล์ (td) สำหรับลำดับ
+            const cell1 = document.createElement('td');
+            cell1.textContent = count; // ตั้งค่าลำดับ
+
+            // สร้างเซลล์ (td) สำหรับข้อมูลนิสิต
+            const cell2 = document.createElement('td');
+            const input = document.createElement('input'); // สร้างช่องกรอกข้อมูล
+            input.type = 'text'; // กำหนดประเภทของ input
+            cell2.appendChild(input); // เพิ่ม input ลงในเซลล์
+
+            // เพิ่มเซลล์เข้าไปในแถว
+            newRow.appendChild(cell1);
+            newRow.appendChild(cell2);
+
+            // เพิ่มแถวเข้าไปใน tbody
+            document.querySelector('#studentTable tbody').appendChild(newRow);
+        });
+    </script>
+
+</body>
+</html>
+

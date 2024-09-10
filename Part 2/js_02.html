@@ -39,7 +39,7 @@
 <p id="str2" name="str2">ว/ด/ป</p>
 
 <!-- Coding JavaScript 2.2 here!!!! -->
-<script>
+<!-- <script>
 	document.getElementById("btn2_2").addEventListener("click",function(){
 		var aday = new Date();
 		var day = aday.getDate();
@@ -51,6 +51,19 @@
 
 		document.getElementById("str2").textContent = full
 	})
+</script> -->
+
+<script>
+		$(document).ready(
+		$("#btn2_2").on('click', function () {
+
+			const event = new Date();
+			const options = { year: 'numeric', month: 'long', day: 'numeric' };
+			const date = event.toLocaleDateString('th-TH', options)
+
+			document.getElementById("str2").innerText = `วันที่ ${date}`
+		})
+	)
 </script>
 
 
@@ -102,14 +115,16 @@
  <script>
 	document.getElementById("btn2_4").addEventListener("click",function(){
 		var checkbox = document.getElementById("ans4")
+		
+
 	if (checkbox.checked) {
 		alert("Checked")
-		
 	}else{
 		alert("Not Check")
 	}
 	})
 </script>
+
 	
 	
 	
